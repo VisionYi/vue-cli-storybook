@@ -1,0 +1,28 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks'
+import MyButton from './Button.vue'
+
+<Meta title="Example/Button MDX" />
+
+# Button MDX
+This is an **MDX format** of Button.
+- button list
+
+<Canvas>
+  <Story name="Button MDX">
+    {{
+      components: { MyButton },
+      template: `
+        <div>
+          <my-button primary label="Button" />
+          <my-button size="large" label="Button" />
+          <my-button size="small" label="Button" />
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+# Button MDX - id link
+<Canvas>
+  <Story name="Button MDX id" id="example-button--primary-2"></Story>
+</Canvas>

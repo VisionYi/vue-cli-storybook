@@ -3,6 +3,15 @@ import MyButton from './Button.vue';
 export default {
   title: 'Example/Button',
   component: MyButton,
+  decorators: [
+    () => ({
+      template: `
+        <div style="padding: 40px; background: #ccc">
+          <story/>
+        </div>
+      `,
+    }),
+  ],
   argTypes: {
     backgroundColor: { control: 'color' },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
@@ -19,6 +28,17 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   label: 'Button',
+};
+
+export const Primary2 = () => ({
+  components: { MyButton },
+  template: '<my-button primary label="Button" />',
+});
+
+export const CustomBackgroundColor = Template.bind({});
+CustomBackgroundColor.args = {
+  ...Primary.args,
+  backgroundColor: '#f22020',
 };
 
 export const Secondary = Template.bind({});
